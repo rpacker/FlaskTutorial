@@ -9,7 +9,9 @@ class Student(Resource):
     def get(self, name):
         return {'student': name}
 
+    def somejunk():
+        pass
 
 api.add_resource(Student, '/student/<string:name>')  # http://127.0.0.1:5000/stucent/Rolf
 
-app.run(port=5000)  # default is 5000 
+app.run(port=5000)  # default is 5000

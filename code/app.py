@@ -12,6 +12,7 @@ api = Api(app)
 jwt = JWT(app, authenticate, identity)
 
 items = []
+#  test
 
 class Item(Resource):
     parser = reqparse.RequestParser()
@@ -31,7 +32,7 @@ class Item(Resource):
             return {'message': "An item with name '{}' already exists.".format(name)}, 400
 
         data = Item.parser.parse_args()
-        
+
         item = {'name': name, 'price': data['price']}
         items.append(item)
         return item, 201

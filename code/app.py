@@ -6,7 +6,7 @@ from security import authenticate, identity
 
 
 app = Flask(__name__)
-app.secret_key = 'rob'
+app.secret_key = 'jose'
 api = Api(app)
 
 jwt = JWT(app, authenticate, identity)
@@ -25,7 +25,7 @@ class Item(Resource):
     @jwt_required()
     def get(self, name):
         item = next(filter(lambda x: x['name'] == name, items), None)
-        return {"item": "None"}, 200 if item else 404
+        return {"item": item}, 200 if item else 404
 
     def post(self, name):
         if next(filter(lambda x: x['name'] == name, items), None):

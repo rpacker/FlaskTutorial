@@ -6,5 +6,10 @@ cursor = connection.cursor()
 create_table = "CREATE TABLE users (id INTEGER PRIMARY KEY, username text, password text)"
 cursor.execute(create_table)
 
-connection.commit()
+create_table2 = "CREATE TABLE items (name text, price real)"
+cursor.execute(create_table2)
+
+#cursor.execute("INSERT INTO items VALUES ('test', 10.99)")
+#connection.commit()
+
 connection.close()

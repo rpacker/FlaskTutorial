@@ -2,6 +2,10 @@ venv/
 code/venv/
 *.pyc
 .idea/
+code/__pycache__/
+code/__pycache__/*
 code/__pycache__/*.pyc
 code/*/*.pyc
 .vscode/
+data.db
+code/__pycache__/security.cpython-36.pyc

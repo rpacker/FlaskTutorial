@@ -44,9 +44,10 @@ class Item(Resource):
             item = ItemModel(name, data['price'])
         else:
             item.price = data['price']
+
         item.save_to_db()
 
-        return updated_item.json()
+        return item.json()
 
     def delete(self, name):
         item = ItemModel.find_by_name(name)
@@ -58,14 +59,5 @@ class Item(Resource):
 
 class ItemList(Resource):
     def get(self):
-        connection = sqlite3.connect('data.db')
-        cursor = connection.cursor()
-        query = "SELECT * FROM items"
-        result = cursor.execute(query)
-        items = []
-        for row in result:
-            items.append({'name': row[0], 'price':  row[1]})
+        return {"items": [x.json() for x in ItemModel.query.all()]}
 
-        connection.close()
-
-        return {'items': items}

@@ -8,3 +8,4 @@ code/*/*.pyc
 .vscode/
 data.db
 .DS_Store
+*.bak

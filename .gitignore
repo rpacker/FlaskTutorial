@@ -3,6 +3,8 @@ code/venv/
 *.pyc
 .idea/
 code/__pycache__/
+__pycache__/
 code/*/*.pyc
 .vscode/
 data.db
+.DS_Store
